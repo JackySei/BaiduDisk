@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/txt_title1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="#fff"
+        android:background="@color/colorBtnEnable"
+        android:padding="5dp"
+        />
+
+    <EditText
+        android:padding="10dp"
+        android:id="@+id/et_login_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_title"
+        android:hint="请输入手机号/用户名/邮箱"
+        android:background="@drawable/bac_1"
+        android:layout_margin="@dimen/marginSize"
+        tools:ignore="MissingConstraints"
+/>
+
+    <EditText
+        android:padding="10dp"
+        android:id="@+id/et_login_psw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码"
+        android:background="@drawable/bac_1"
+        android:layout_margin="@dimen/marginSize"
+        app:layout_constraintTop_toBottomOf="@+id/et_login_user"
+        tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:enabled="false"
+        android:text="登录"
+        android:background="@drawable/bac_2"
+        android:layout_margin="@dimen/marginSize"
+        app:layout_constraintTop_toBottomOf="@+id/et_login_psw"
+        tools:ignore="MissingConstraints" />
+    <ImageButton
+        android:foregroundGravity="center"
+        android:id="@+id/ib_login_psw_visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/et_login_user"
+        app:layout_constraintBottom_toBottomOf="@+id/et_login_psw"
+        app:layout_constraintRight_toRightOf="@id/et_login_psw" />
+    <ImageView
+        android:id="@+id/img"
+        android:src="@mipmap/baidu_resultlogo"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/marginSize"
+        tools:ignore="MissingConstraints" />
+<TextView
+    android:id="@+id/txt_title"
+    android:layout_width="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/img"
+    android:layout_height="wrap_content"
+    android:text="欢迎登录百度账号"
+    android:textColor="#000"
+    android:textSize="35sp"
+    android:layout_margin="@dimen/marginSize"
+    tools:ignore="MissingConstraints" />
+</androidx.constraintlayout.widget.ConstraintLayout>
