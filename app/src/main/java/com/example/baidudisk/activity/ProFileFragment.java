@@ -3,6 +3,7 @@ package com.example.baidudisk.activity;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +84,9 @@ public class ProFileFragment extends Fragment {
         new NetworkInterfaces().syncUserInfo(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Looper.prepare();
                 Toast.makeText(getContext(),"获取用户信息失败！",Toast.LENGTH_SHORT).show();
+                Looper.loop();
             }
 
             @Override
@@ -93,7 +96,9 @@ public class ProFileFragment extends Fragment {
                     showUserInfo(entity);
                 }
                 else {
+                    Looper.prepare();
                     Toast.makeText(getContext(),"获取失败",Toast.LENGTH_SHORT).show();
+                    Looper.loop();
                 }
             }
 
@@ -125,7 +130,9 @@ public class ProFileFragment extends Fragment {
         new NetworkInterfaces().syncUserSpace(new Callback() {
             @Override
             public void onFailure(@NotNull Call call, @NotNull IOException e) {
+                Looper.prepare();
                 Toast.makeText(getContext(),"获取容量失败",Toast.LENGTH_SHORT).show();
+                Looper.loop();
             }
 
             @Override
@@ -135,7 +142,9 @@ public class ProFileFragment extends Fragment {
                     showSpace(entity);
                 }
                 else {
+                    Looper.prepare();
                     Toast.makeText(getContext(),"获取失败",Toast.LENGTH_SHORT).show();
+                    Looper.loop();
                 }
             }
         });
